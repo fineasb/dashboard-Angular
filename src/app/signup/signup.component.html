@@ -1,0 +1,17 @@
+<button routerLink="/home" >Home</button>
+
+<form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <p>
+        <input formControlName="displayName" />
+    </p>
+    <p>
+        <input formControlName="email" type="email" placeholder="Email" />
+    </p>
+    <p>
+        <input formControlName="password" type="password" placeholder="Password" />
+    </p>
+    <div *ngIf="firebaseErrorMessage != '' ">
+        <span>{{firebaseErrorMessage}}</span>
+    </div>
+    <button>Signup</button>
+</form>
